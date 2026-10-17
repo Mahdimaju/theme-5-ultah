@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undangan Ulang Tahun ke-10 Keinzyy Laland 🎉</title>
+
+    <!-- Google Fonts: Fredoka, Nunito, Quicksand -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&family=Quicksand:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Canvas Confetti CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+    <!-- Konfigurasi Tema & Palet Warna -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#06B6D4',    // Cyan Cerah
+                        secondary: '#F59E0B',  // Amber / Kuning Oranye
+                        bgcream: '#FEF3C7',    // Latar Belakang Krem Ceria
+                        surface: '#FFFFFF',    // Putih Kartu
+                        darktext: '#1E293B',   // Slate 800
+                        accent: '#EF4444',     // Merah Coral Playful
+                        rosegold: '#F43F5E'    // Sentuhan Rose Gold / Pink
+                    },
+                    fontFamily: {
+                        fredoka: ['Fredoka', 'sans-serif'],
+                        nunito: ['Nunito', 'sans-serif'],
+                        quicksand: ['Quicksand', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'cartoon': '0 8px 0px 0px rgba(30, 41, 59, 0.9)',
+                        'cartoon-sm': '0 4px 0px 0px rgba(30, 41, 59, 0.9)',
+                        'cartoon-cyan': '0 6px 0px 0px #0891B2',
+                        'cartoon-amber': '0 6px 0px 0px #D97706',
+                        'cartoon-red': '0 6px 0px 0px #DC2626',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #FEF3C7;
+            color: #1E293B;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-display {
+            font-family: 'Fredoka', sans-serif;
+        }
+
+        /* Pola Background Polkadot Playful */
+        .bg-fiesta-pattern {
+            background-color: #FEF3C7;
+            background-image:
+                radial-gradient(#06B6D4 1.75px, transparent 1.75px),
+                radial-gradient(#F59E0B 1.75px, #FEF3C7 1.75px);
+            background-size: 48px 48px;
+            background-position: 0 0, 24px 24px;
+        }
+
+        /* Animasi Balon Melayang */
+        @keyframes floatBalloon {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(-3deg);
+            }
+
+            50% {
+                transform: translateY(-22px) rotate(4deg);
+            }
+        }
+
+        @keyframes floatUpContinuous {
+            0% {
+                transform: translateY(110vh) rotate(-6deg) scale(0.9);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 0.85;
+            }
+
+            85% {
+                opacity: 0.85;
+            }
+
+            100% {
+                transform: translateY(-20vh) rotate(8deg) scale(1.05);
+                opacity: 0;
+            }
+        }
+
+        .animate-balloon {
+            animation: floatBalloon 4s ease-in-out infinite;
+        }
+
+        .animate-balloon-delayed {
+            animation: floatBalloon 5s ease-in-out 1.5s infinite;
+        }
+
+        .floating-bg-balloon {
+            position: fixed;
+            z-index: 1;
+            pointer-events: none;
+            animation: floatUpContinuous linear infinite;
+        }
+
+        /* Animasi Amplop 3D */
+        .envelope-perspective {
+            perspective: 1200px;
+        }
+
+        .envelope-flap {
+            transform-origin: top;
+            transition: transform 0.85s cubic-bezier(0.34, 1.56, 0.64, 1), z-index 0.3s;
+        }
+
+        .envelope-open .envelope-flap {
+            transform: rotateX(180deg);
+            z-index: 10;
+        }
+
+        .envelope-letter {
+            transition: transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) 0.35s;
+        }
+
+        .envelope-open .envelope-letter {
+            transform: translateY(-115px) scale(1.03);
+            z-index: 30;
+        }
+
+        /* Animasi Piringan Musik Berputar */
+        @keyframes spinSlow {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .spin-disc {
+            animation: spinSlow 6s linear infinite;
+        }
+
+        .spin-paused {
+            animation-play-state: paused;
+        }
+
+        /* Animasi Angka Countdown Flip */
+        @keyframes popNumber {
+            0% {
+                transform: scale(1);
+            }
+
+            40% {
+                transform: scale(1.18) rotate(-2deg);
+            }
+
+            100% {
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        .number-pop {
+            animation: popNumber 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #FEF3C7;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #06B6D4;
+            border-radius: 9999px;
+            border: 2px solid #1E293B;
+        }
+
+        /* Tombol Kartun Interaktif */
+        .btn-cartoon {
+            transition: all 0.15s ease;
+        }
+
+        .btn-cartoon:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0px 0px rgba(30, 41, 59, 0.9);
+        }
+    </style>
+</head>
+
+<body class="bg-fiesta-pattern min-h-screen selection:bg-primary selection:text-white relative">
+
+    <!-- ==========================================
+       DEKORASI BALON MELAYANG DI BACKGROUND
+  =========================================== -->
+    <div id="balloon-container" class="fixed inset-0 overflow-hidden pointer-events-none z-0"></div>
+
+    <!-- ==========================================
+       1. COVER AMPLOP BUKA INTERAKTIF (MODAL AWAL)
+  =========================================== -->
+    <div id="envelope-overlay"
+        class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gradient-to-b from-cyan-500/95 via-amber-300/95 to-yellow-200/95 backdrop-blur-md transition-all duration-1000">
+
+        <!-- Dekorasi Bintang & Balon Cover -->
+        <div class="absolute top-8 left-6 md:left-20 animate-balloon pointer-events-none">
+            <svg width="72" height="95" viewBox="0 0 72 95" fill="none">
+                <ellipse cx="36" cy="36" rx="32" ry="35" fill="#EF4444" stroke="#1E293B" stroke-width="3.5" />
+                <ellipse cx="24" cy="22" rx="7" ry="12" transform="rotate(-20 24 22)" fill="white" fill-opacity="0.5" />
+                <path d="M32 71L40 71L38 77L34 77L32 71Z" fill="#EF4444" stroke="#1E293B" stroke-width="3" />
+                <path d="M36 77C36 83 30 87 38 94" stroke="#1E293B" stroke-width="2.5" stroke-linecap="round" />
+            </svg>
+        </div>
+        <div class="absolute top-12 right-6 md:right-20 animate-balloon-delayed pointer-events-none">
+            <svg width="68" height="90" viewBox="0 0 72 95" fill="none">
+                <ellipse cx="36" cy="36" rx="32" ry="35" fill="#F59E0B" stroke="#1E293B" stroke-width="3.5" />
+                <ellipse cx="24" cy="22" rx="7" ry="12" transform="rotate(-20 24 22)" fill="white" fill-opacity="0.5" />
+                <path d="M32 71L40 71L38 77L34 77L32 71Z" fill="#F59E0B" stroke="#1E293B" stroke-width="3" />
+                <path d="M36 77C36 83 42 87 34 94" stroke="#1E293B" stroke-width="2.5" stroke-linecap="round" />
+            </svg>
+        </div>
+
+        <div class="w-full max-w-md mx-auto flex flex-col items-center text-center relative z-10">
+
+            <!-- Badge Milestone -->
+            <div
+                class="inline-flex items-center gap-2 bg-white border-[3px] border-darktext px-4 py-1.5 rounded-full shadow-cartoon-sm mb-6 animate-bounce">
+                <span class="text-xl">🎈</span>
+                <span class="font-fredoka font-bold text-sm tracking-wide text-darktext uppercase">Special 10th Birthday
+                    Fiesta!</span>
+                <span class="text-xl">🎂</span>
+            </div>
+
+            <!-- Visual Amplop Interaktif -->
+            <div id="envelope-box" class="envelope-perspective w-full max-w-[360px] mt-10 mb-6 relative">
+
+                <!-- Bagian Belakang Amplop -->
+                <div
+                    class="relative w-full h-64 bg-primary border-4 border-darktext rounded-3xl shadow-cartoon flex items-center justify-center">
+
+                    <!-- Kartu Surat di Dalam Amplop -->
+                    <div
+                        class="envelope-letter w-[88%] bg-white border-4 border-darktext rounded-2xl p-5 shadow-md text-center relative z-20 -mt-12">
+                        <div
+                            class="w-16 h-16 mx-auto -mt-12 rounded-full bg-secondary border-4 border-darktext flex items-center justify-center text-3xl shadow-cartoon-sm">
+                            👑
+                        </div>
+                        <p class="font-quicksand font-bold text-xs uppercase tracking-widest text-primary mt-2">You're
+                            Invited To</p>
+                        <h1 class="font-fredoka text-3xl font-bold text-darktext leading-tight mt-0.5">
+                            Keinzy's <span class="text-accent">10th</span> Party!
+                        </h1>
+                        <p class="text-xs font-semibold text-slate-500 mt-1">Sabtu, 24 Oktober 2026 • 18:30 WIB</p>
+
+                        <!-- Kotak Nama Tamu Personalisasi URL -->
+                        <div class="mt-3 bg-bgcream border-2 border-dashed border-darktext rounded-xl p-2.5">
+                            <p class="text-[11px] font-bold text-slate-600 uppercase">Kepada Yth. Sahabat Spesial:</p>
+                            <p id="guest-name-display"
+                                class="font-fredoka text-lg font-bold text-darktext break-words mt-0.5">
+                                Sahabat Tersayang ✨
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Lipatan Samping & Bawah Amplop Depan -->
+                    <div class="absolute inset-0 rounded-2xl overflow-hidden pointer-events-none z-25">
+                        <div
+                            class="absolute bottom-0 inset-x-0 h-28 bg-cyan-400 border-t-4 border-darktext flex items-center justify-center">
+                            <span
+                                class="text-xs font-fredoka font-bold text-white tracking-wider uppercase bg-darktext/20 px-3 py-1 rounded-full">
+                                ✨ Keinzyy Laland Official Invite ✨
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Flap Segitiga Atas Amplop -->
+                    <div class="envelope-flap absolute top-0 inset-x-0 h-32 z-30 pointer-events-none">
+                        <svg viewBox="0 0 360 130" class="w-full h-full drop-shadow">
+                            <path d="M4 4 L180 120 L356 4 Z" fill="#F59E0B" stroke="#1E293B" stroke-width="6"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <!-- Segel Stiker Kartun -->
+                        <div
+                            class="w-12 h-12 rounded-full bg-accent border-[3px] border-darktext text-white flex items-center justify-center text-xl font-bold shadow-md mx-auto -mt-8">
+                            💌
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <p class="text-xs sm:text-sm font-bold text-darktext/80 mb-5 px-4">
+                Klik tombol di bawah buat buka amplop & nyalakan musik pestanya! 🎶
+            </p>
+
+            <!-- Tombol Buka Undangan -->
+            <button id="open-invitation-btn" onclick="openInvitation()"
+                class="btn-cartoon group relative inline-flex items-center gap-3 bg-accent hover:bg-red-500 text-white font-fredoka text-xl font-bold px-8 py-4 rounded-2xl border-4 border-darktext shadow-cartoon cursor-pointer">
+                <span class="text-2xl group-hover:rotate-12 transition-transform">🎉</span>
+                <span>Buka Undangan</span>
+                <span class="text-2xl group-hover:-rotate-12 transition-transform">🎈</span>
+            </button>
+
+        </div>
+    </div>
+
+    <!-- ==========================================
+       7. PEMUTAR MUSIK LATAR (FLOATING DISC PLAYER)
+  =========================================== -->
+    <div id="music-Control-wrapper" class="fixed bottom-5 right-5 z-40 flex items-center gap-2">
+        <div id="music-label"
+            class="hidden sm:flex items-center gap-1.5 bg-white border-[3px] border-darktext px-3 py-1.5 rounded-full shadow-cartoon-sm text-xs font-bold text-darktext">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+            <span id="music-status-text">Ukulele Fiesta On 🎵</span>
+        </div>
+        <button id="music-toggle-btn" onclick="toggleMusic()" aria-label="Toggle Music"
+            class="btn-cartoon relative w-14 h-14 rounded-full bg-secondary border-4 border-darktext shadow-cartoon flex items-center justify-center group focus:outline-none">
+            <!-- Piringan Hitam Kartun -->
+            <div id="vinyl-disc"
+                class="w-11 h-11 rounded-full bg-darktext border-2 border-white flex items-center justify-center spin-disc spin-paused">
+                <div class="w-4 h-4 rounded-full bg-accent border-2 border-white flex items-center justify-center">
+                    <div class="w-1.5 h-1.5 rounded-full bg-white"></div>
+                </div>
+            </div>
+            <!-- Badge Play/Pause -->
+            <span id="music-badge-icon"
+                class="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-primary border-2 border-darktext text-white text-xs flex items-center justify-center font-bold">
+                ▶
+            </span>
+        </button>
+    </div>
+
+    <!-- Elemen Audio Fallback Eksternal (Ukulele Ceria) + Web Audio Synthesizer Internal -->
+    <audio id="bg-audio" loop preload="auto">
+        <source
+            src="https://cdn.pixabay.com/download/audio/2022/05/17/audio_4072b0f71b.mp3?filename=ukulele-fun-111458.mp3"
+            type="audio/mpeg">
+    </audio>
+
+    <!-- ==========================================
+       NAVIGATION BAR MENGAMBANG (MOBILE QUICK NAV)
+  =========================================== -->
+    <nav
+        class="fixed bottom-5 left-1/2 -translate-x-1/2 z-30 bg-white/95 backdrop-blur border-[3px] border-darktext rounded-full px-3 py-2 shadow-cartoon hidden md:flex items-center gap-1 sm:gap-2">
+        <a href="#hero"
+            class="px-3 py-1.5 rounded-full font-fredoka text-xs sm:text-sm font-bold hover:bg-primary hover:text-white transition">🏠
+            Home</a>
+        <a href="#acara"
+            class="px-3 py-1.5 rounded-full font-fredoka text-xs sm:text-sm font-bold hover:bg-primary hover:text-white transition">📅
+            Acara</a>
+        <a href="#rundown"
+            class="px-3 py-1.5 rounded-full font-fredoka text-xs sm:text-sm font-bold hover:bg-primary hover:text-white transition">🎪
+            Rundown</a>
+        <a href="#galeri"
+            class="px-3 py-1.5 rounded-full font-fredoka text-xs sm:text-sm font-bold hover:bg-primary hover:text-white transition">📸
+            Galeri</a>
+        <a href="#rsvp"
+            class="px-3 py-1.5 rounded-full font-fredoka text-xs sm:text-sm font-bold hover:bg-primary hover:text-white transition">✍️
+            RSVP</a>
+        <a href="#hadiah"
+            class="px-3 py-1.5 rounded-full font-fredoka text-xs sm:text-sm font-bold hover:bg-primary hover:text-white transition">🎁
+            Kado</a>
+    </nav>
+
+    <!-- ==========================================
+       MAIN CONTAINER (RESPONSIVE MOBILE-FIRST SHELL)
+  =========================================== -->
+    <main class="relative z-10 max-w-xl mx-auto px-4 sm:px-6 pt-6 pb-28 space-y-10">
+
+        <!-- ==========================================
+         HERO SECTION & KUTIPAN PEMBUKA
+    =========================================== -->
+        <section id="hero"
+            class="bg-surface border-4 border-darktext rounded-[2rem] p-6 sm:p-8 shadow-cartoon relative overflow-hidden text-center">
+            <!-- Pita Banner Atas -->
+            <div class="flex justify-center gap-2 mb-4">
+                <span class="w-4 h-4 rounded-full bg-primary border-2 border-darktext"></span>
+                <span class="w-4 h-4 rounded-full bg-secondary border-2 border-darktext"></span>
+                <span class="w-4 h-4 rounded-full bg-accent border-2 border-darktext"></span>
+                <span class="w-4 h-4 rounded-full bg-emerald-400 border-2 border-darktext"></span>
+                <span class="w-4 h-4 rounded-full bg-pink-400 border-2 border-darktext"></span>
+            </div>
+
+            <div
+                class="inline-block bg-primary/15 border-2 border-primary text-darktext px-4 py-1 rounded-full font-fredoka text-sm font-bold mb-3">
+                ✨ DOUBLE DIGITS FIESTA ✨
+            </div>
+
+            <!-- Avatar / Foto Utama Kartun & Ceria -->
+            <div class="relative w-44 h-44 mx-auto my-4">
+                <div
+                    class="absolute inset-0 bg-secondary rounded-full border-4 border-darktext translate-x-2 translate-y-2">
+                </div>
+                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80"
+                    alt="Keinzyy Laland"
+                    class="relative w-full h-full object-cover rounded-full border-4 border-darktext bg-white" />
+                <!-- Badge Angka 10th -->
+                <div
+                    class="absolute -bottom-2 -right-2 bg-accent text-white font-fredoka font-bold text-2xl w-16 h-16 rounded-2xl border-4 border-darktext shadow-cartoon-sm flex flex-col items-center justify-center rotate-6">
+                    <span class="leading-none">10<sup class="text-xs">th</sup></span>
+                    <span class="text-[9px] tracking-wider uppercase">Level Up!</span>
+                </div>
+                <!-- Mahkota Dekoratif -->
+                <div class="absolute -top-5 -left-3 text-4xl -rotate-12 select-none">👑</div>
+            </div>
+
+            <!-- Nama & Headline -->
+            <p class="font-quicksand font-bold text-sm uppercase tracking-widest text-primary mt-4">
+                Let's Celebrate With
+            </p>
+            <h1 class="font-fredoka text-4xl sm:text-5xl font-bold text-darktext tracking-tight mt-1">
+                keinzyy laland
+            </h1>
+            <div
+                class="inline-flex items-center gap-2 bg-secondary text-darktext font-fredoka font-bold text-base px-4 py-1 rounded-xl border-[3px] border-darktext shadow-cartoon-sm mt-2">
+                <span>🌟 Panggil Aku:</span>
+                <span class="underline decoration-wavy decoration-white">keinzy</span>
+            </div>
+
+            <!-- Kutipan / Pesan Pembuka -->
+            <blockquote class="mt-6 bg-bgcream border-[3px] border-darktext rounded-2xl p-4 relative">
+                <span
+                    class="text-2xl absolute -top-4 left-4 bg-white border-2 border-darktext rounded-full w-8 h-8 flex items-center justify-center">💬</span>
+                <p class="font-quicksand font-bold text-darktext text-sm sm:text-base italic leading-relaxed pt-1">
+                    "Merayakan lembaran baru penuh kilau, cinta, dan tawa bersama orang tersayang."
+                </p>
+            </blockquote>
+
+            <!-- Sapaan Kasual Akrab -->
+            <p class="mt-4 text-sm sm:text-base text-slate-700 leading-relaxed font-medium">
+                Halo teman-teman & sahabat tersayang! 🥳 Nggak kerasa <strong>keinzy</strong> udah resmi masuk usia
+                <strong>10 tahun</strong> nih! Yuk datang, seru-seruan bareng, tiup lilin, dan bikin kenangan paling
+                gokil di pesta ulang tahunku!
+            </p>
+
+            <!-- Tombol Konfeti Interaktif Cepat -->
+            <button onclick="fireCelebrationConfetti()"
+                class="btn-cartoon mt-5 inline-flex items-center gap-2 bg-primary text-white font-fredoka font-bold text-sm px-5 py-2.5 rounded-xl border-[3px] border-darktext shadow-cartoon-sm">
+                <span>🎊</span> Tap Buat Lempar Konfeti!
+            </button>
+        </section>
+
+        <!-- ==========================================
+         2. REAL-TIME COUNTDOWN TIMER
+    =========================================== -->
+        <section
+            class="bg-primary border-4 border-darktext rounded-[2rem] p-6 sm:p-7 shadow-cartoon text-white text-center relative overflow-hidden">
+            <div class="flex items-center justify-center gap-2 mb-2">
+                <span class="text-2xl">⏰</span>
+                <h2 class="font-fredoka text-2xl sm:text-3xl font-bold tracking-wide drop-shadow">
+                    Hitung Mundur Pesta!
+                </h2>
+            </div>
+            <p
+                class="text-xs sm:text-sm font-bold text-cyan-950 bg-white/90 inline-block px-3 py-1 rounded-full border-2 border-darktext mb-5">
+                Menuju Sabtu, 24 Oktober 2026 • 18:30 WIB
+            </p>
+
+            <div class="grid grid-cols-4 gap-2.5 sm:gap-4">
+                <!-- Hari -->
+                <div class="bg-white text-darktext border-[3px] border-darktext rounded-2xl p-3 shadow-cartoon-sm">
+                    <div id="cd-days" class="font-fredoka text-2xl sm:text-4xl font-bold text-accent">00</div>
+                    <div class="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-600 mt-1">Hari
+                    </div>
+                </div>
+                <!-- Jam -->
+                <div class="bg-white text-darktext border-[3px] border-darktext rounded-2xl p-3 shadow-cartoon-sm">
+                    <div id="cd-hours" class="font-fredoka text-2xl sm:text-4xl font-bold text-primary">00</div>
+                    <div class="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-600 mt-1">Jam
+                    </div>
+                </div>
+                <!-- Menit -->
+                <div class="bg-white text-darktext border-[3px] border-darktext rounded-2xl p-3 shadow-cartoon-sm">
+                    <div id="cd-minutes" class="font-fredoka text-2xl sm:text-4xl font-bold text-secondary">00</div>
+                    <div class="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-600 mt-1">
+                        Menit</div>
+                </div>
+                <!-- Detik -->
+                <div class="bg-white text-darktext border-[3px] border-darktext rounded-2xl p-3 shadow-cartoon-sm">
+                    <div id="cd-seconds" class="font-fredoka text-2xl sm:text-4xl font-bold text-emerald-600">00</div>
+                    <div class="text-[11px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-600 mt-1">
+                        Detik</div>
+                </div>
+            </div>
+
+            <p id="countdown-message" class="mt-4 text-xs sm:text-sm font-bold text-white/95">
+                Siapkan outfit terbaikmu dan jangan sampai terlambat yaa! 🎈
+            </p>
+        </section>
+
+        <!-- ==========================================
+         DETAIL ACARA, VENUE, DRESS CODE & KALENDER
+    =========================================== -->
+        <section id="acara"
+            class="bg-surface border-4 border-darktext rounded-[2rem] p-6 sm:p-8 shadow-cartoon space-y-6">
+            <div class="text-center">
+                <span
+                    class="inline-block bg-secondary/20 border-2 border-secondary text-darktext font-fredoka text-xs font-bold px-3 py-1 rounded-full uppercase">
+                    Save The Date
+                </span>
+                <h2 class="font-fredoka text-3xl font-bold text-darktext mt-2">
+                    Kapan & Di Mana? 📍
+                </h2>
+                <p class="text-sm text-slate-600 font-medium mt-1">
+                    Catat jadwalnya biar kita bisa seru-seruan bareng dari awal!
+                </p>
+            </div>
+
+            <!-- Grid Kartu Info -->
+            <div class="space-y-4">
+                <!-- Tanggal & Waktu -->
+                <div
+                    class="flex items-start gap-4 bg-bgcream border-[3px] border-darktext rounded-2xl p-4 shadow-cartoon-sm">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-primary border-[3px] border-darktext flex items-center justify-center text-2xl shrink-0">
+                        🗓️
+                    </div>
+                    <div>
+                        <p class="text-xs font-extrabold uppercase text-slate-500">Hari & Tanggal Pelaksanaan</p>
+                        <h3 class="font-fredoka text-lg sm:text-xl font-bold text-darktext">Sabtu, 24 Oktober 2026</h3>
+                        <p class="text-sm font-bold text-accent mt-0.5">⏰ Pukul 18:30 WIB - Selesai</p>
+                    </div>
+                </div>
+
+                <!-- Tempat / Venue -->
+                <div
+                    class="flex items-start gap-4 bg-bgcream border-[3px] border-darktext rounded-2xl p-4 shadow-cartoon-sm">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-secondary border-[3px] border-darktext flex items-center justify-center text-2xl shrink-0">
+                        🏰
+                    </div>
+                    <div>
+                        <p class="text-xs font-extrabold uppercase text-slate-500">Lokasi / Venue Pesta</p>
+                        <h3 class="font-fredoka text-lg sm:text-xl font-bold text-darktext">
+                            The Glass House Sky Lounge
+                        </h3>
+                        <p class="text-sm font-bold text-slate-700">Grand Ballroom Lt. 12</p>
+                    </div>
+                </div>
+
+                <!-- Dress Code Acara -->
+                <div
+                    class="flex items-start gap-4 bg-gradient-to-r from-pink-100 via-amber-50 to-rose-100 border-[3px] border-darktext rounded-2xl p-4 shadow-cartoon-sm">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-rosegold border-[3px] border-darktext text-white flex items-center justify-center text-2xl shrink-0">
+                        👗
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-xs font-extrabold uppercase text-rose-600">Dress Code Spesial</p>
+                        <h3 class="font-fredoka text-lg font-bold text-darktext">
+                            Glamorous Pastel & Touch of Rose Gold ✨
+                        </h3>
+                        <!-- Swatch Warna Dresscode -->
+                        <div class="flex items-center gap-2 mt-2">
+                            <span class="w-6 h-6 rounded-full bg-pink-200 border-2 border-darktext"
+                                title="Pastel Pink"></span>
+                            <span class="w-6 h-6 rounded-full bg-sky-200 border-2 border-darktext"
+                                title="Pastel Blue"></span>
+                            <span class="w-6 h-6 rounded-full bg-purple-200 border-2 border-darktext"
+                                title="Pastel Lilac"></span>
+                            <span class="w-6 h-6 rounded-full bg-amber-200 border-2 border-darktext"
+                                title="Pastel Peach"></span>
+                            <span
+                                class="w-6 h-6 rounded-full bg-gradient-to-tr from-rose-400 to-amber-300 border-2 border-darktext"
+                                title="Rose Gold"></span>
+                            <span class="text-xs font-bold text-slate-600 ml-1">Tampil kece & berkilau ya!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. INTEGRASI LOKASI (IFRAME MAPS) & KALENDER -->
+            <div class="space-y-3 pt-2">
+                <div
+                    class="rounded-2xl overflow-hidden border-[3px] border-darktext shadow-cartoon-sm h-56 bg-slate-100">
+                    <iframe title="Peta Lokasi The Glass House Sky Lounge"
+                        src="https://www.google.com/maps?q=The+Glass+House+Sky+Lounge+Grand+Ballroom&output=embed"
+                        class="w-full h-full border-0" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                    <!-- Buka Petunjuk Arah -->
+                    <a href="https://www.google.com/maps/search/?api=1&query=The+Glass+House+Sky+Lounge+Grand+Ballroom+Lt.+12"
+                        target="_blank" rel="noopener noreferrer"
+                        class="btn-cartoon flex items-center justify-center gap-2 bg-primary hover:bg-cyan-500 text-white font-fredoka font-bold py-3.5 px-4 rounded-xl border-[3px] border-darktext shadow-cartoon-sm text-center">
+                        <span>🗺️</span>
+                        <span>Buka Petunjuk Arah</span>
+                    </a>
+
+                    <!-- Simpan ke Google Calendar -->
+                    <a id="google-calendar-btn" href="#" target="_blank" rel="noopener noreferrer"
+                        class="btn-cartoon flex items-center justify-center gap-2 bg-secondary hover:bg-amber-400 text-darktext font-fredoka font-bold py-3.5 px-4 rounded-xl border-[3px] border-darktext shadow-cartoon-sm text-center">
+                        <span>📅</span>
+                        <span>Simpan ke Google Calendar</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+         4. SUSUNAN ACARA TIMELINE (RUNDOWN)
+    =========================================== -->
+        <section id="rundown" class="bg-surface border-4 border-darktext rounded-[2rem] p-6 sm:p-8 shadow-cartoon">
+            <div class="text-center mb-7">
+                <span
+                    class="inline-block bg-accent/15 border-2 border-accent text-accent font-fredoka text-xs font-bold px-3 py-1 rounded-full uppercase">
+                    Party Timeline
+                </span>
+                <h2 class="font-fredoka text-3xl font-bold text-darktext mt-2">
+                    Susunan Acara Seru 🎪
+                </h2>
+                <p class="text-sm text-slate-600 font-medium mt-1">
+                    Banyak kejutan, games, dan hadiah seru yang nungguin kamu!
+                </p>
+            </div>
+
+            <!-- Vertical Timeline -->
+            <div class="relative pl-6 sm:pl-8 border-l-4 border-dashed border-primary space-y-6 ml-3">
+
+                <!-- Item 1 -->
+                <div class="relative group">
+                    <div
+                        class="absolute -left-[42px] sm:-left-[50px] top-1 w-10 h-10 rounded-full bg-primary border-[3px] border-darktext text-white flex items-center justify-center text-lg shadow-cartoon-sm group-hover:scale-110 transition">
+                        📸
+                    </div>
+                    <div class="bg-bgcream border-[3px] border-darktext rounded-2xl p-4 shadow-cartoon-sm">
+                        <span
+                            class="inline-block bg-primary text-white font-fredoka text-xs font-bold px-2.5 py-0.5 rounded-md border-2 border-darktext">
+                            18.30 - 19.00 WIB
+                        </span>
+                        <h3 class="font-fredoka text-lg font-bold text-darktext mt-1.5">
+                            Welcoming Guests & Red Carpet Photo Session
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 font-medium mt-0.5">
+                            Registrasi tamu, ambil goodie bag lucu, dan bergaya di photobooth red carpet!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="relative group">
+                    <div
+                        class="absolute -left-[42px] sm:-left-[50px] top-1 w-10 h-10 rounded-full bg-secondary border-[3px] border-darktext text-darktext flex items-center justify-center text-lg shadow-cartoon-sm group-hover:scale-110 transition">
+                        🎬
+                    </div>
+                    <div class="bg-bgcream border-[3px] border-darktext rounded-2xl p-4 shadow-cartoon-sm">
+                        <span
+                            class="inline-block bg-secondary text-darktext font-fredoka text-xs font-bold px-2.5 py-0.5 rounded-md border-2 border-darktext">
+                            19.00 - 19.30 WIB
+                        </span>
+                        <h3 class="font-fredoka text-lg font-bold text-darktext mt-1.5">
+                            Opening Ceremony & Special Video Memories
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 font-medium mt-0.5">
+                            Sambutan hangat dan nonton bareng perjalanan seru Keinzy dari kecil hingga 10 tahun.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="relative group">
+                    <div
+                        class="absolute -left-[42px] sm:-left-[50px] top-1 w-10 h-10 rounded-full bg-accent border-[3px] border-darktext text-white flex items-center justify-center text-lg shadow-cartoon-sm group-hover:scale-110 transition">
+                        🎂
+                    </div>
+                    <div class="bg-bgcream border-[3px] border-darktext rounded-2xl p-4 shadow-cartoon-sm">
+                        <span
+                            class="inline-block bg-accent text-white font-fredoka text-xs font-bold px-2.5 py-0.5 rounded-md border-2 border-darktext">
+                            19.30 - 20.00 WIB
+                        </span>
+                        <h3 class="font-fredoka text-lg font-bold text-darktext mt-1.5">
+                            Candle Blowing, Cake Cutting & Birthday Wish
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 font-medium mt-0.5">
+                            Momen puncak nyanyi bareng, tiup lilin ke-10, potong kue ulang tahun & doa terbaik!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="relative group">
+                    <div
+                        class="absolute -left-[42px] sm:-left-[50px] top-1 w-10 h-10 rounded-full bg-emerald-400 border-[3px] border-darktext text-darktext flex items-center justify-center text-lg shadow-cartoon-sm group-hover:scale-110 transition">
+                        🍽️
+                    </div>
+                    <div class="bg-bgcream border-[3px] border-darktext rounded-2xl p-4 shadow-cartoon-sm">
+                        <span
+                            class="inline-block bg-emerald-400 text-darktext font-fredoka text-xs font-bold px-2.5 py-0.5 rounded-md border-2 border-darktext">
+                            20.00 - 21.00 WIB
+                        </span>
+                        <h3 class="font-fredoka text-lg font-bold text-darktext mt-1.5">
+                            Dinner Banquet & Acoustic Live Band
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 font-medium mt-0.5">
+                            Makan malam spesial ditemani dessert corner manis & alunan musik live yang asyik.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="relative group">
+                    <div
+                        class="absolute -left-[42px] sm:-left-[50px] top-1 w-10 h-10 rounded-full bg-pink-400 border-[3px] border-darktext text-white flex items-center justify-center text-lg shadow-cartoon-sm group-hover:scale-110 transition">
+                        🎁
+                    </div>
+                    <div class="bg-bgcream border-[3px] border-darktext rounded-2xl p-4 shadow-cartoon-sm">
+                        <span
+                            class="inline-block bg-pink-400 text-white font-fredoka text-xs font-bold px-2.5 py-0.5 rounded-md border-2 border-darktext">
+                            21.00 - 22.00 WIB
+                        </span>
+                        <h3 class="font-fredoka text-lg font-bold text-darktext mt-1.5">
+                            Fun Party Games, Doorprize & Photo Session
+                        </h3>
+                        <p class="text-xs sm:text-sm text-slate-600 font-medium mt-0.5">
+                            Games heboh berhadiah doorprize kece dan foto bersama seluruh sahabat!
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==========================================
+         3. GALERI FOTO & KENANGAN + LIGHTBOX MODAL
+    =========================================== -->
+        <section id="galeri" class="bg-surface border-4 border-darktext rounded-[2rem] p-6 sm:p-8 shadow-cartoon">
+            <div class="text-center mb-6">
+                <span
+                    class="inline-block bg-primary/20 border-2 border-primary text-darktext font-fredoka text-xs font-bold px-3 py-1 rounded-full uppercase">
+                    Sweet Memories
+                </span>
+                <h2 class="font-fredoka text-3xl font-bold text-darktext mt-2">
+                    Galeri Ceria Keinzy 📸
+                </h2>
+                <p class="text-sm text-slate-600 font-medium mt-1">
+                    Klik foto untuk melihat momen penuh tawa dalam ukuran penuh!
+                </p>
+            </div>
+
+            <!-- Grid Foto Masonry / Playful -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3.5">
+                <!-- Foto 1 -->
+                <div onclick="openLightbox(0)"
+                    class="group relative overflow-hidden rounded-2xl border-[3px] border-darktext shadow-cartoon-sm cursor-pointer col-span-2 sm:col-span-2 h-52">
+                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=900&q=80"
+                        alt="Party Balloons Fiesta"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-darktext/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3">
+                        <span class="text-white font-fredoka text-xs font-bold">🎈 Persiapan Pesta Balon Ceria</span>
+                    </div>
+                </div>
+
+                <!-- Foto 2 -->
+                <div onclick="openLightbox(1)"
+                    class="group relative overflow-hidden rounded-2xl border-[3px] border-darktext shadow-cartoon-sm cursor-pointer h-52">
+                    <img src="https://images.unsplash.com/photo-1558636508-e0db3814bd1d?auto=format&fit=crop&w=700&q=80"
+                        alt="Birthday Cake"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-darktext/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3">
+                        <span class="text-white font-fredoka text-xs font-bold">🎂 Sweet Birthday Treats</span>
+                    </div>
+                </div>
+
+                <!-- Foto 3 -->
+                <div onclick="openLightbox(2)"
+                    class="group relative overflow-hidden rounded-2xl border-[3px] border-darktext shadow-cartoon-sm cursor-pointer h-44">
+                    <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=700&q=80"
+                        alt="Confetti Fun"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-darktext/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3">
+                        <span class="text-white font-fredoka text-xs font-bold">🎊 Warna-Warni Konfeti</span>
+                    </div>
+                </div>
+
+                <!-- Foto 4 -->
+                <div onclick="openLightbox(3)"
+                    class="group relative overflow-hidden rounded-2xl border-[3px] border-darktext shadow-cartoon-sm cursor-pointer h-44">
+                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=700&q=80"
+                        alt="Keinzy Smile"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-darktext/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3">
+                        <span class="text-white font-fredoka text-xs font-bold">👑 Senyum Bahagia Keinzy</span>
+                    </div>
+                </div>
+
+                <!-- Foto 5 -->
+                <div onclick="openLightbox(4)"
+                    class="group relative overflow-hidden rounded-2xl border-[3px] border-darktext shadow-cartoon-sm cursor-pointer col-span-2 sm:col-span-1 h-44">
+                    <img src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?auto=format&fit=crop&w=700&q=80"
+                        alt="Birthday Sparkle"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-darktext/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3">
+                        <span class="text-white font-fredoka text-xs font-bold">✨ Make a 10th Birthday Wish!</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+         6. RSVP KONFIRMASI KEHADIRAN & GUESTBOOK
+    =========================================== -->
+        <section id="rsvp" class="bg-surface border-4 border-darktext rounded-[2rem] p-6 sm:p-8 shadow-cartoon">
+            <div class="text-center mb-6">
+                <span
+                    class="inline-block bg-emerald-400/25 border-2 border-emerald-600 text-darktext font-fredoka text-xs font-bold px-3 py-1 rounded-full uppercase">
+                    RSVP & Wishes
+                </span>
+                <h2 class="font-fredoka text-3xl font-bold text-darktext mt-2">
+                    Konfirmasi & Doa Seru ✍️
+                </h2>
+                <p class="text-sm text-slate-600 font-medium mt-1">
+                    Isi daftar kehadiranmu dan tulis doa paling manis buat Keinzy yaa!
+                </p>
+            </div>
+
+            <!-- Form RSVP -->
+            <form id="rsvp-form" onsubmit="handleRsvpSubmit(event)"
+                class="space-y-4 bg-bgcream border-[3px] border-darktext rounded-2xl p-5 shadow-cartoon-sm">
+                <div>
+                    <label for="rsvp-name" class="block font-fredoka text-sm font-bold text-darktext mb-1">
+                        Nama Kamu / Sahabat 👋
+                    </label>
+                    <input type="text" id="rsvp-name" required placeholder="Contoh: Kak Rara & Keluarga"
+                        class="w-full px-4 py-3 rounded-xl bg-white border-[3px] border-darktext font-bold text-sm focus:outline-none focus:ring-2 focus:ring-primary" />
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                    <div>
+                        <label for="rsvp-pax" class="block font-fredoka text-sm font-bold text-darktext mb-1">
+                            Jumlah Orang 👨‍👩‍👧
+                        </label>
+                        <select id="rsvp-pax"
+                            class="w-full px-4 py-3 rounded-xl bg-white border-[3px] border-darktext font-bold text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                            <option value="1 Orang">1 Orang</option>
+                            <option value="2 Orang">2 Orang</option>
+                            <option value="3 Orang">3 Orang</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="rsvp-status" class="block font-fredoka text-sm font-bold text-darktext mb-1">
+                            Konfirmasi Kehadiran 🎉
+                        </label>
+                        <select id="rsvp-status"
+                            class="w-full px-4 py-3 rounded-xl bg-white border-[3px] border-darktext font-bold text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                            <option value="Hadir">🥳 Pasti Hadir Dong!</option>
+                            <option value="Berhalangan">🙏 Maaf Berhalangan</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="rsvp-message" class="block font-fredoka text-sm font-bold text-darktext mb-1">
+                        Ucapan & Doa Terbaik Buat Keinzy 💬
+                    </label>
+                    <textarea id="rsvp-message" rows="3" required
+                        placeholder="Selamat ulang tahun ke-10 Keinzy! Semoga makin pintar, ceria, dan..."
+                        class="w-full px-4 py-3 rounded-xl bg-white border-[3px] border-darktext font-bold text-sm focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                </div>
+
+                <button type="submit"
+                    class="btn-cartoon w-full bg-accent hover:bg-red-500 text-white font-fredoka text-lg font-bold py-3.5 px-6 rounded-xl border-[3px] border-darktext shadow-cartoon flex items-center justify-center gap-2 cursor-pointer">
+                    <span>🚀</span>
+                    <span>Kirim Konfirmasi & Ucapan</span>
+                </button>
+            </form>
+
+            <!-- Statistik Singkat Guestbook -->
+            <div class="flex items-center justify-between mt-7 mb-3 px-1">
+                <h3 class="font-fredoka text-xl font-bold text-darktext flex items-center gap-2">
+                    <span>💌</span> Buku Tamu Sahabat
+                </h3>
+                <span id="wishes-count-badge"
+                    class="bg-primary text-white font-fredoka text-xs font-bold px-3 py-1 rounded-full border-2 border-darktext">
+                    0 Ucapan
+                </span>
+            </div>
+
+            <!-- Daftar Ucapan Guestbook -->
+            <div id="guestbook-list" class="space-y-3 max-h-80 overflow-y-auto pr-1"></div>
+        </section>
+
+        <!-- ==========================================
+         8. AMPLOP DIGITAL / HADIAH ULANG TAHUN
+    =========================================== -->
+        <section id="hadiah"
+            class="bg-surface border-4 border-darktext rounded-[2rem] p-6 sm:p-8 shadow-cartoon text-center">
+            <span
+                class="inline-block bg-secondary/20 border-2 border-secondary text-darktext font-fredoka text-xs font-bold px-3 py-1 rounded-full uppercase">
+                Birthday Gift
+            </span>
+            <h2 class="font-fredoka text-3xl font-bold text-darktext mt-2">
+                Kado & Amplop Digital 🎁
+            </h2>
+            <p class="text-sm text-slate-600 font-medium mt-1 mb-6">
+                Kehadiran dan doa teman-teman adalah kado terindah buat Keinzy! Tapi kalau mau kirim tanda kasih untuk
+                tabungan masa depan Keinzy, bisa lewat sini yaa:
+            </p>
+
+            <!-- Daftar Kartu Rekening Bank -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
+
+                <!-- Kartu Bank BCA -->
+                <div
+                    class="bg-gradient-to-br from-cyan-50 to-sky-100 border-[3px] border-darktext rounded-2xl p-4 shadow-cartoon-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span
+                                class="bg-blue-600 text-white font-fredoka font-bold text-xs px-3 py-1 rounded-lg border-2 border-darktext">
+                                BANK BCA
+                            </span>
+                            <span class="text-xl">💳</span>
+                        </div>
+                        <p class="text-xs font-bold text-slate-500 uppercase">Nomor Rekening</p>
+                        <p id="rek-bca" class="font-fredoka text-xl font-bold text-darktext tracking-wider mt-0.5">
+                            8735091244
+                        </p>
+                        <p class="text-xs font-extrabold text-slate-700 mt-1">a.n <span class="uppercase">keinzy</span>
+                        </p>
+                    </div>
+
+                    <button onclick="copyAccountNumber('8735091244', 'btn-copy-bca')" id="btn-copy-bca"
+                        class="btn-cartoon mt-4 w-full bg-white hover:bg-primary hover:text-white text-darktext font-fredoka text-xs font-bold py-2.5 px-3 rounded-xl border-2 border-darktext shadow-cartoon-sm flex items-center justify-center gap-1.5">
+                        <span>📋</span> Salin Nomor Rekening
+                    </button>
+                </div>
+
+                <!-- Kartu Bank Mandiri -->
+                <div
+                    class="bg-gradient-to-br from-amber-50 to-yellow-100 border-[3px] border-darktext rounded-2xl p-4 shadow-cartoon-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span
+                                class="bg-amber-500 text-darktext font-fredoka font-bold text-xs px-3 py-1 rounded-lg border-2 border-darktext">
+                                BANK MANDIRI
+                            </span>
+                            <span class="text-xl">🏦</span>
+                        </div>
+                        <p class="text-xs font-bold text-slate-500 uppercase">Nomor Rekening</p>
+                        <p id="rek-mandiri" class="font-fredoka text-xl font-bold text-darktext tracking-wider mt-0.5">
+                            1320098412891
+                        </p>
+                        <p class="text-xs font-extrabold text-slate-700 mt-1">a.n <span class="uppercase">keinzy</span>
+                        </p>
+                    </div>
+
+                    <button onclick="copyAccountNumber('1320098412891', 'btn-copy-mandiri')" id="btn-copy-mandiri"
+                        class="btn-cartoon mt-4 w-full bg-white hover:bg-secondary text-darktext font-fredoka text-xs font-bold py-2.5 px-3 rounded-xl border-2 border-darktext shadow-cartoon-sm flex items-center justify-center gap-1.5">
+                        <span>📋</span> Salin Nomor Rekening
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Placeholder Barcode QRIS -->
+            <div class="mt-5 bg-bgcream border-[3px] border-darktext rounded-2xl p-5 shadow-cartoon-sm">
+                <div
+                    class="inline-flex items-center gap-1.5 bg-white border-2 border-darktext px-3 py-1 rounded-full text-xs font-fredoka font-bold mb-3">
+                    <span>📱</span> Scan QRIS All Payment
+                </div>
+                <div
+                    class="w-44 h-44 mx-auto bg-white p-3 rounded-2xl border-[3px] border-darktext shadow-cartoon-sm flex items-center justify-center">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=KEINZYY-LALAND-10TH-BIRTHDAY-GIFT&color=1E293B&bgcolor=FFFFFF"
+                        alt="QRIS Barcode Keinzy" class="w-full h-full object-contain rounded-lg" />
+                </div>
+                <p class="text-xs font-bold text-slate-600 mt-3">
+                    NMID: ID20261024KEINZY10TH • a.n <strong>keinzyy laland</strong>
+                </p>
+            </div>
+        </section>
+
+        <!-- ==========================================
+         FOOTER PENUTUP
+    =========================================== -->
+        <footer class="text-center pt-2 pb-8">
+            <div class="bg-primary border-4 border-darktext rounded-3xl p-6 shadow-cartoon text-white">
+                <div class="text-3xl mb-2">🎈🎂🥳</div>
+                <h3 class="font-fredoka text-2xl font-bold">
+                    See You at The Party, Besties!
+                </h3>
+                <p class="text-xs sm:text-sm font-bold text-white/90 mt-1">
+                    Terima kasih sudah jadi bagian dari perjalanan seru 10 tahun <span class="underline">keinzyy
+                        laland</span>!
+                </p>
+                <div class="mt-4 pt-3 border-t-2 border-white/30 text-[11px] font-bold uppercase tracking-wider">
+                    Made with 💖 for Keinzy's 10th Milestone Fiesta • 2026
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- ==========================================
+       MODAL LIGHTBOX GALERI FOTO
+  =========================================== -->
+    <div id="lightbox-modal"
+        class="fixed inset-0 z-50 hidden items-center justify-center bg-darktext/85 backdrop-blur-sm p-4"
+        onclick="closeLightbox(event)">
+        <div class="relative max-w-lg w-full bg-white border-4 border-darktext rounded-3xl p-3 sm:p-4 shadow-cartoon"
+            onclick="event.stopPropagation()">
+            <button onclick="closeLightbox()"
+                class="btn-cartoon absolute -top-4 -right-4 w-11 h-11 rounded-full bg-accent text-white border-[3px] border-darktext font-fredoka text-lg font-bold shadow-cartoon-sm flex items-center justify-center">
+                ✕
+            </button>
+            <div class="overflow-hidden rounded-2xl border-[3px] border-darktext bg-slate-100">
+                <img id="lightbox-img" src="" alt="Preview Foto" class="w-full max-h-[70vh] object-cover" />
+            </div>
+            <div class="flex items-center justify-between mt-3 px-1">
+                <button onclick="changeSlide(-1)"
+                    class="btn-cartoon bg-bgcream hover:bg-secondary px-4 py-2 rounded-xl border-2 border-darktext font-fredoka text-xs font-bold">
+                    ◀ Sebelumnya
+                </button>
+                <p id="lightbox-caption" class="font-fredoka text-sm font-bold text-darktext text-center px-2"></p>
+                <button onclick="changeSlide(1)"
+                    class="btn-cartoon bg-bgcream hover:bg-secondary px-4 py-2 rounded-xl border-2 border-darktext font-fredoka text-xs font-bold">
+                    Selanjutnya ▶
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+       TOAST NOTIFICATION
+  =========================================== -->
+    <div id="toast-notif"
+        class="fixed top-5 left-1/2 -translate-x-1/2 z-50 hidden items-center gap-2 bg-darktext text-white border-2 border-white px-5 py-3 rounded-2xl shadow-lg font-fredoka text-sm font-bold transition-all">
+        <span id="toast-icon">✅</span>
+        <span id="toast-text">Berhasil disalin!</span>
+    </div>
+
+    <!-- ==========================================
+       LOGIKA JAVASCRIPT LENGKAP
+  =========================================== -->
+    <script>
+        /* =====================================================
+           10. PERSONALISASI NAMA TAMU VIA URL (?to=NamaTamu)
+        ===================================================== */
+        function initGuestNameFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            const guestParam = params.get('to') || params.get('tamu') || params.get('guest');
+            const displayEl = document.getElementById('guest-name-display');
+            const rsvpNameInput = document.getElementById('rsvp-name');
+
+            if (guestParam && guestParam.trim() !== '') {
+                const cleanName = decodeURIComponent(guestParam.replace(/\+/g, ' ')).trim();
+                displayEl.textContent = cleanName;
+                if (rsvpNameInput) {
+                    rsvpNameInput.value = cleanName;
+                }
+            }
+        }
+
+        /* =====================================================
+           9. GENERATOR BALON MELAYANG DI LATAR BELAKANG
+        ===================================================== */
+        function initFloatingBalloons() {
+            const container = document.getElementById('balloon-container');
+            const colors = ['#06B6D4', '#F59E0B', '#EF4444', '#10B981', '#EC4899'];
+            const balloonCount = 9;
+
+            for (let i = 0; i < balloonCount; i++) {
+                const color = colors[i % colors.length];
+                const leftPos = Math.floor(Math.random() * 92) + 2;
+                const duration = Math.floor(Math.random() * 10) + 15;
+                const delay = Math.floor(Math.random() * 12);
+                const size = Math.floor(Math.random() * 20) + 42;
+
+                const balloon = document.createElement('div');
+                balloon.className = 'floating-bg-balloon';
+                balloon.style.left = `${leftPos}%`;
+                balloon.style.animationDuration = `${duration}s`;
+                balloon.style.animationDelay = `-${delay}s`;
+
+                balloon.innerHTML = `
+          <svg width="${size}" height="${Math.round(size * 1.3)}" viewBox="0 0 72 95" fill="none" style="opacity: 0.45">
+            <ellipse cx="36" cy="36" rx="32" ry="35" fill="${color}" stroke="#1E293B" stroke-width="4"/>
+            <ellipse cx="24" cy="22" rx="7" ry="12" transform="rotate(-20 24 22)" fill="white" fill-opacity="0.55"/>
+            <path d="M32 71L40 71L38 77L34 77L32 71Z" fill="${color}" stroke="#1E293B" stroke-width="3"/>
+            <path d="M36 77C36 83 30 87 38 94" stroke="#1E293B" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        `;
+                container.appendChild(balloon);
+            }
+        }
+
+        /* =====================================================
+           1 & 9. BUKA AMPLOP INTERAKTIF + EFEK KONFETI
+        ===================================================== */
+        let invitationOpened = false;
+
+        function openInvitation() {
+            if (invitationOpened) return;
+            invitationOpened = true;
+
+            const envelopeBox = document.getElementById('envelope-box');
+            const overlay = document.getElementById('envelope-overlay');
+
+            // Animasi Flap Amplop Terbuka
+            envelopeBox.classList.add('envelope-open');
+
+            // Nyalakan Musik Otomatis
+            startMusic();
+
+            // Ledakan Konfeti Meriah
+            fireCelebrationConfetti();
+
+            // Transisi Hilangkan Cover Amplop
+            setTimeout(() => {
+                overlay.classList.add('opacity-0', 'scale-105', 'pointer-events-none');
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                }, 900);
+            }, 950);
+        }
+
+        function fireCelebrationConfetti() {
+            if (typeof confetti !== 'function') return;
+
+            const fiestaColors = ['#06B6D4', '#F59E0B', '#EF4444', '#FEF3C7', '#EC4899'];
+
+            confetti({
+                particleCount: 90,
+                spread: 80,
+                origin: { y: 0.6 },
+                colors: fiestaColors
+            });
+
+            setTimeout(() => {
+                confetti({
+                    particleCount: 55,
+                    angle: 60,
+                    spread: 60,
+                    origin: { x: 0 },
+                    colors: fiestaColors
+                });
+                confetti({
+                    particleCount: 55,
+                    angle: 120,
+                    spread: 60,
+                    origin: { x: 1 },
+                    colors: fiestaColors
+                });
+            }, 250);
+        }
+
+        /* =====================================================
+           2. REAL-TIME COUNTDOWN TIMER (24 OKT 2026 18:30 WIB)
+        ===================================================== */
+        const targetDate = new Date('2026-10-24T18:30:00+07:00').getTime();
+        let prevSeconds = -1;
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+
+            const daysEl = document.getElementById('cd-days');
+            const hoursEl = document.getElementById('cd-hours');
+            const minutesEl = document.getElementById('cd-minutes');
+            const secondsEl = document.getElementById('cd-seconds');
+            const msgEl = document.getElementById('countdown-message');
+
+            if (diff <= 0) {
+                daysEl.textContent = '00';
+                hoursEl.textContent = '00';
+                minutesEl.textContent = '00';
+                secondsEl.textContent = '00';
+                msgEl.textContent = '🎉 HORE! Pesta Ulang Tahun ke-10 Keinzy Sedang Berlangsung! 🥳';
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            daysEl.textContent = String(days).padStart(2, '0');
+            hoursEl.textContent = String(hours).padStart(2, '0');
+            minutesEl.textContent = String(minutes).padStart(2, '0');
+
+            if (seconds !== prevSeconds) {
+                secondsEl.textContent = String(seconds).padStart(2, '0');
+                secondsEl.classList.remove('number-pop');
+                void secondsEl.offsetWidth; // trigger reflow
+                secondsEl.classList.add('number-pop');
+                prevSeconds = seconds;
+            }
+        }
+
+        /* =====================================================
+           5. GENERATOR LINK GOOGLE CALENDAR OTOMATIS
+        ===================================================== */
+        function initGoogleCalendarLink() {
+            const btn = document.getElementById('google-calendar-btn');
+            const title = encodeURIComponent("Keinzy's 10th Birthday Party 🎉 (keinzyy laland)");
+            // 24 Oktober 2026 18:30 WIB (11:30 UTC) s/d 22:00 WIB (15:00 UTC)
+            const dates = '20261024T113000Z/20261024T150000Z';
+            const location = encodeURIComponent('The Glass House Sky Lounge, Grand Ballroom Lt. 12');
+            const details = encodeURIComponent(
+                'Merayakan ulang tahun ke-10 Keinzyy Laland (Keinzy)!\n\n' +
+                'Dress Code: Glamorous Pastel & Touch of Rose Gold ✨\n' +
+                'Waktu: Sabtu, 24 Oktober 2026 pukul 18:30 WIB - Selesai.'
+            );
+
+            btn.href = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`;
+        }
+
+        /* =====================================================
+           3. GALERI FOTO & LIGHTBOX MODAL
+        ===================================================== */
+        const galleryItems = [
+            {
+                url: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1200&q=85',
+                caption: '🎈 Persiapan Pesta Balon Ceria Keinzy'
+            },
+            {
+                url: 'https://images.unsplash.com/photo-1558636508-e0db3814bd1d?auto=format&fit=crop&w=1200&q=85',
+                caption: '🎂 Kue Ulang Tahun Spesial 10 Tahun'
+            },
+            {
+                url: 'https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=1200&q=85',
+                caption: '🎊 Warna-Warni Konfeti & Tawa Sahabat'
+            },
+            {
+                url: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=85',
+                caption: '👑 Senyum Manis Keinzy Memasuki Usia 10 Tahun'
+            },
+            {
+                url: 'https://images.unsplash.com/photo-1464349153735-7db50ed83c84?auto=format&fit=crop&w=1200&q=85',
+                caption: '✨ Make a 10th Birthday Wish!'
+            }
+        ];
+        let currentSlideIndex = 0;
+
+        function openLightbox(index) {
+            currentSlideIndex = index;
+            const modal = document.getElementById('lightbox-modal');
+            const img = document.getElementById('lightbox-img');
+            const cap = document.getElementById('lightbox-caption');
+
+            img.src = galleryItems[currentSlideIndex].url;
+            cap.textContent = galleryItems[currentSlideIndex].caption;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightbox-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function changeSlide(step) {
+            currentSlideIndex = (currentSlideIndex + step + galleryItems.length) % galleryItems.length;
+            const img = document.getElementById('lightbox-img');
+            const cap = document.getElementById('lightbox-caption');
+            img.src = galleryItems[currentSlideIndex].url;
+            cap.textContent = galleryItems[currentSlideIndex].caption;
+        }
+
+        /* =====================================================
+           6. RSVP & GUESTBOOK DENGAN LOCALSTORAGE
+        ===================================================== */
+        const STORAGE_KEY = 'keinzy_10th_birthday_guestbook_v1';
+
+        const defaultWishes = [
+            {
+                name: 'Alya & Bunda',
+                pax: '2 Orang',
+                status: 'Hadir',
+                message: 'Happy 10th Birthday Keinzy cantik! 🥳 Semoga makin pintar, sehat selalu, dan jadi kebanggaan keluarga. Sampai ketemu di Sky Lounge yaa!',
+                time: 'Baru saja'
+            },
+            {
+                name: 'Rafa Pratama',
+                pax: '1 Orang',
+                status: 'Hadir',
+                message: 'Selamat ulang tahun ke-10 Keinzy! Udah siapin outfit pastel paling kece buat seru-seruan bareng di games nanti! 🎈🎁',
+                time: '10 menit lalu'
+            }
+        ];
+
+        function getGuestbookData() {
+            try {
+                const raw = localStorage.getItem(STORAGE_KEY);
+                if (!raw) {
+                    localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultWishes));
+                    return defaultWishes;
+                }
+                return JSON.parse(raw);
+            } catch (e) {
+                return defaultWishes;
+            }
+        }
+
+        function renderGuestbook() {
+            const listEl = document.getElementById('guestbook-list');
+            const countBadge = document.getElementById('wishes-count-badge');
+            const wishes = getGuestbookData();
+
+            countBadge.textContent = `${wishes.length} Ucapan`;
+            listEl.innerHTML = '';
+
+            wishes.forEach((item) => {
+                const isHadir = item.status === 'Hadir';
+                const badgeClass = isHadir
+                    ? 'bg-emerald-400 text-darktext'
+                    : 'bg-amber-200 text-darktext';
+                const badgeText = isHadir ? `🥳 Hadir (${item.pax})` : '🙏 Berhalangan';
+
+                const card = document.createElement('div');
+                card.className = 'bg-bgcream border-[3px] border-darktext rounded-2xl p-4 shadow-cartoon-sm';
+
+                card.innerHTML = `
+          <div class="flex items-center justify-between gap-2 flex-wrap">
+            <h4 class="font-fredoka font-bold text-base text-darktext flex items-center gap-1.5">
+              <span>🌟</span>
+              <span>${escapeHtml(item.name)}</span>
+            </h4>
+            <span class="${badgeClass} font-fredoka text-[11px] font-bold px-2.5 py-0.5 rounded-full border-2 border-darktext">
+              ${escapeHtml(badgeText)}
+            </span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-700 font-medium mt-2 leading-relaxed">
+            "${escapeHtml(item.message)}"
+          </p>
+          <p class="text-[10px] font-bold text-slate-400 uppercase mt-2">
+            🕒 ${escapeHtml(item.time)}
+          </p>
+        `;
+                listEl.appendChild(card);
+            });
+        }
+
+        function handleRsvpSubmit(event) {
+            event.preventDefault();
+            const nameInput = document.getElementById('rsvp-name');
+            const paxInput = document.getElementById('rsvp-pax');
+            const statusInput = document.getElementById('rsvp-status');
+            const msgInput = document.getElementById('rsvp-message');
+
+            const newEntry = {
+                name: nameInput.value.trim(),
+                pax: paxInput.value,
+                status: statusInput.value,
+                message: msgInput.value.trim(),
+                time: 'Baru saja dikirim'
+            };
+
+            const wishes = getGuestbookData();
+            wishes.unshift(newEntry);
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(wishes));
+
+            renderGuestbook();
+            fireCelebrationConfetti();
+            showToast('🎉 Yeay! Konfirmasi & ucapanmu sudah tampil di buku tamu!');
+
+            msgInput.value = '';
+        }
+
+        function escapeHtml(str) {
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#039;');
+        }
+
+        /* =====================================================
+           8. SALIN NOMOR REKENING SATU KLIK
+        ===================================================== */
+        function copyAccountNumber(number, btnId) {
+            navigator.clipboard.writeText(number).then(() => {
+                const btn = document.getElementById(btnId);
+                const originalHtml = btn.innerHTML;
+                btn.innerHTML = '<span>✅</span> Berhasil Disalin!';
+                btn.classList.add('bg-emerald-400', 'text-darktext');
+                showToast(`Nomor rekening ${number} berhasil disalin! 📋`);
+
+                setTimeout(() => {
+                    btn.innerHTML = originalHtml;
+                    btn.classList.remove('bg-emerald-400');
+                }, 2200);
+            });
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast-notif');
+            const text = document.getElementById('toast-text');
+            text.textContent = message;
+            toast.classList.remove('hidden');
+            toast.classList.add('flex');
+
+            setTimeout(() => {
+                toast.classList.add('hidden');
+                toast.classList.remove('flex');
+            }, 3000);
+        }
+
+        /* =====================================================
+           7. PEMUTAR MUSIK LATAR (JOYFUL UKULELE SYNTH + AUDIO)
+        ===================================================== */
+        let isPlaying = false;
+        let audioCtx = null;
+        let melodyInterval = null;
+
+        // Melodi Ukulele Ceria (Web Audio API Pluck Synthesizer sebagai jaminan 100% bunyi)
+        const happyNotes = [
+            523.25, 659.25, 783.99, 659.25, // C5 E5 G5 E5
+            587.33, 698.46, 880.00, 698.46, // D5 F5 A5 F5
+            659.25, 783.99, 1046.50, 783.99,// E5 G5 C6 G5
+            587.33, 783.99, 659.25, 523.25  // D5 G5 E5 C5
+        ];
+        let noteStep = 0;
+
+        function playUkuleleNote(freq) {
+            if (!audioCtx) return;
+            const now = audioCtx.currentTime;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(freq, now);
+
+            gain.gain.setValueAtTime(0.001, now);
+            gain.gain.linearRampToValueAtTime(0.12, now + 0.02);
+            gain.gain.exponentialRampToValueAtTime(0.0008, now + 0.32);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start(now);
+            osc.stop(now + 0.34);
+        }
+
+        function startSynthLoop() {
+            if (!audioCtx) {
+                const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+                audioCtx = new AudioContextClass();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            if (melodyInterval) clearInterval(melodyInterval);
+            melodyInterval = setInterval(() => {
+                if (isPlaying) {
+                    playUkuleleNote(happyNotes[noteStep % happyNotes.length]);
+                    noteStep++;
+                }
+            }, 280);
+        }
+
+        function stopSynthLoop() {
+            if (melodyInterval) {
+                clearInterval(melodyInterval);
+                melodyInterval = null;
+            }
+        }
+
+        function updateMusicUI() {
+            const disc = document.getElementById('vinyl-disc');
+            const badge = document.getElementById('music-badge-icon');
+            const statusText = document.getElementById('music-status-text');
+
+            if (isPlaying) {
+                disc.classList.remove('spin-paused');
+                badge.textContent = '⏸';
+                statusText.textContent = 'Ukulele Fiesta On 🎵';
+            } else {
+                disc.classList.add('spin-paused');
+                badge.textContent = '▶';
+                statusText.textContent = 'Musik Dijeda 🔇';
+            }
+        }
+
+        function startMusic() {
+            const audioEl = document.getElementById('bg-audio');
+            isPlaying = true;
+            updateMusicUI();
+
+            audioEl.volume = 0.5;
+            audioEl.play().catch(() => {
+                // Jika stream eksternal diblokir/offline, gunakan synthesizer ukulele internal
+                startSynthLoop();
+            });
+        }
+
+        function toggleMusic() {
+            const audioEl = document.getElementById('bg-audio');
+            isPlaying = !isPlaying;
+
+            if (isPlaying) {
+                audioEl.play().catch(() => {
+                    startSynthLoop();
+                });
+            } else {
+                audioEl.pause();
+                stopSynthLoop();
+            }
+            updateMusicUI();
+        }
+
+        /* =====================================================
+           INISIALISASI SAAT HALAMAN DIMUAT
+        ===================================================== */
+        window.addEventListener('DOMContentLoaded', () => {
+            initGuestNameFromUrl();
+            initFloatingBalloons();
+            initGoogleCalendarLink();
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+            renderGuestbook();
+        });
+    </script>
+</body>
+
+</html>
